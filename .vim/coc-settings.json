@@ -1,0 +1,43 @@
+{
+  "languageserver": {
+    "go": {
+      "command": "gopls",
+      "rootPatterns": [
+        "go.mod"
+      ],
+      "trace.server": "verbose",
+      "filetypes": [
+        "go"
+      ]
+    },
+    "purescript": {
+      "command": "purescript-language-server",
+      "args": [
+        "--stdio"
+      ],
+      "filetypes": [
+        "purescript"
+      ],
+      "rootPatterns": [
+        "psc-package.json",
+        "spago.dhall"
+      ],
+      "settings": {
+        "purescript": {
+          "addSpagoSources": true,
+          "autoStartPscIde": true,
+          "pscIdePort": 8898,
+          "autocompleteAddImport": true,
+          "pursExe": "purs",
+          "addNpmPath": true,
+          "codegenTargets": [
+            "corefn"
+          ]
+        }
+      }
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": [
+    "*"
+  ]
+}

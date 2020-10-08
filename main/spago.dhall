@@ -14,8 +14,10 @@ in  { name = "my-project"
             , "random"
             , "parsing"
             , "parser"
+            , "generics-rep"
+            , "optparse"
             ]
-          , deps
+          -- , deps
           ]
     , packages = ../packages.dhall
     , sources = [ "src/**/*.purs", "test/**/*.purs" ]

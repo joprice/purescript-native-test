@@ -4,3 +4,6 @@ run-no-gc:
 
 update-deps:
 	go list -u -m all
+
+symbols:
+	go tool nm -size ./Main | c++filt > symbols.txt

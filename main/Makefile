@@ -7,3 +7,6 @@ update-deps:
 
 symbols:
 	go tool nm -size ./Main | c++filt > symbols.txt
+
+fail: 
+	./Main test

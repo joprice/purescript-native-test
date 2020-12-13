@@ -20,5 +20,5 @@ in  { name = "my-project"
           ]
     , packages = ../packages.dhall
     , sources = [ "src/**/*.purs", "test/**/*.purs" ]
-    , backend = "psgo"
+    -- , backend = "psgo"
     }

@@ -125,8 +125,10 @@ let overrides = {=}
 
 let additions = {=}
 
-in      upstream
+let all = upstream
     //  overrides
     //  additions
+in
+all
       with parser = ./parser/spago.dhall as Location
       with main = ./main/spago.dhall as Location

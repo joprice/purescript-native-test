@@ -1,13 +1,12 @@
 module Parser where
 
-import Data.Either (Either(..))
 import Prelude
+import Control.Alt ((<|>))
+import Data.Either (Either(..))
 import Effect (Effect)
 import Effect.Console (log)
-import Text.Parsing.Parser (Parser, ParserT, runParser, parseErrorPosition)
-import Text.Parsing.Parser.String (eof, string, char, satisfy, anyChar)
-import Control.Alt ((<|>))
-import Text.Parsing.Parser.Expr (Assoc(..), Operator(..), buildExprParser)
+import Text.Parsing.Parser (ParseError, Parser, runParser)
+import Text.Parsing.Parser.String (string)
 
 digit :: Parser String Int
 digit =
@@ -22,6 +21,7 @@ digit =
     <|> (string "8" >>= \_ -> pure 8)
     <|> (string "9" >>= \_ -> pure 9)
 
+parse :: Either ParseError Int
 parse = runParser "a" digit
 
 main :: Effect Unit

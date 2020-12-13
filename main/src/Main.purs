@@ -8,7 +8,7 @@ import ExitCodes (ExitCode)
 import ExitCodes as ExitCode
 import Data.Tuple (Tuple(..))
 import Data.Array as Array
-import Data.Maybe (Maybe(..), fromMaybe)
+import Data.Maybe (fromMaybe)
 import Data.String as String
 import Data.Newtype (un)
 import Data.Tuple.Nested ((/\))
@@ -60,7 +60,6 @@ handleParseResult (Failure failure) = do
   log (msg <> "\n")
   exitWith exit
 
-
 handleParseResult (CompletionInvoked compl) = do
   progn <- getProgName
   msg <- (un CompletionResult compl).execCompletion progn
@@ -79,7 +78,7 @@ execParser :: forall a. ParserInfo a -> Effect a
 execParser = customExecParser defaultPrefs
 
 main :: Effect Unit
-main = execParser opts # void
+main = execParser opts >>= log
 
 opts :: ParserInfo String
 opts = info sample idm

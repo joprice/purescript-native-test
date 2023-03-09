@@ -5,8 +5,8 @@ import Control.Alt ((<|>))
 import Data.Either (Either(..))
 import Effect (Effect)
 import Effect.Console (log)
-import Text.Parsing.Parser (ParseError, Parser, runParser)
-import Text.Parsing.Parser.String (string)
+import Parsing (ParseError, Parser, runParser)
+import Parsing.String (string)
 
 digit :: Parser String Int
 digit =

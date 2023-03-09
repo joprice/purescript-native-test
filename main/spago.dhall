@@ -9,12 +9,16 @@ in  { name = "my-project"
           Text
           [ [ "console"
             , "effect"
-            , "psci-support"
-            , "aff"
-            , "random"
-            , "parsing"
             , "parser"
             , "optparse"
+            , "arrays"
+            , "enums"
+            , "exitcodes"
+            , "maybe"
+            , "newtype"
+            , "prelude"
+            , "strings"
+            , "tuples"
             ]
           -- , deps
           ]
